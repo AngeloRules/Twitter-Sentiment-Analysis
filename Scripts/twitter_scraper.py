@@ -34,7 +34,7 @@ def tweet_getter(query,limit,start_date,end_date,replies=False):
             'Retweets':tweet.retweetCount,
             'Device':tweet.sourceLabel
             })
-            print(f'Added a tweet ...{len(tweets)} done')
+            print(f'Added a tweet ...{len(tweets)} done out of {limit}')
     return pd.DataFrame(tweets)
 
 if __name__ == '__main__':
