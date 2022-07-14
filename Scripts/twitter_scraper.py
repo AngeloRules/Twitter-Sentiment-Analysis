@@ -34,10 +34,11 @@ def tweet_getter(query,limit,start_date,end_date,replies=False):
             'Retweets':tweet.retweetCount,
             'Device':tweet.sourceLabel
             })
+            # refer to the snscrape documentation to add more attributes
             print(f'Added a tweet ...{len(tweets)} done out of {limit}')
     return pd.DataFrame(tweets)
 
 if __name__ == '__main__':
-    tweets_data = tweet_getter('', 150000, '2022-01-01','2022-07-07',False)
+    tweets_data = tweet_getter('Topic of interest', 150000, '2022-01-01','2022-07-07',False)
     print(tweets_data.head(10))
-    tweets_data.to_csv(r'C:/Users/user/Desktop/Project/Sentiment Analysis/Twitter-Sentiment-Analysis/.csv',index=False)
+    tweets_data.to_csv('Your preferred file path',index=False)
